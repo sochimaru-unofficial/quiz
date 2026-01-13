@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10問連続クイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-screen">
+            <p id="question-number">第 1 問</p>
+            <h2 id="question-text">読み込み中...</h2>
+            <div id="answer-buttons" class="btn-grid"></div>
+        </div>
+        <div id="result-screen" class="hidden">
+            <h2>結果発表</h2>
+            <p id="score-text"></p>
+            <button onclick="location.reload()">もう一度挑戦する</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
