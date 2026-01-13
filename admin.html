@@ -1,0 +1,38 @@
+<div class="admin-container">
+    <h3>問題作成フォーム</h3>
+    <input type="text" id="q" placeholder="問題文">
+    <input type="text" id="a0" placeholder="選択肢1">
+    <input type="text" id="a1" placeholder="選択肢2">
+    <input type="text" id="a2" placeholder="選択肢3">
+    <input type="text" id="a3" placeholder="選択肢4">
+    <select id="correct">
+        <option value="0">選択肢1が正解</option>
+        <option value="1">選択肢2が正解</option>
+        <option value="2">選択肢3が正解</option>
+        <option value="3">選択肢4が正解</option>
+    </select>
+    <textarea id="ex" placeholder="解説"></textarea>
+    <button onclick="generateJSON()">JSONを生成</button>
+
+    <hr>
+    <h4>生成されたデータ（これをコピーしてquestions.jsonへ）</h4>
+    <pre id="output" style="background:#eee; padding:10px;"></pre>
+</div>
+
+<script>
+function generateJSON() {
+    const data = {
+        q: document.getElementById('q').value,
+        a: [
+            document.getElementById('a0').value,
+            document.getElementById('a1').value,
+            document.getElementById('a2').value,
+            document.getElementById('a3').value
+        ],
+        correct: parseInt(document.getElementById('correct').value),
+        ex: document.getElementById('ex').value
+    };
+    // 既存のリストに追加しやすい形式で表示
+    document.getElementById('output').innerText = JSON.stringify(data, null, 2) + ",";
+}
+</script>
